@@ -1,5 +1,4 @@
 import 'package:brilnix/community/Search_group.dart';
-import 'package:brilnix/courses/course.dart';
 import 'package:brilnix/home.dart';
 import 'package:brilnix/widgets/header.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -283,13 +282,9 @@ class ChatScreenState extends State<ChatScreen> {
                 },
               ),
               IconButton(
-                icon: const Icon(Icons.menu_book_outlined, size: 30),
+                icon: const Icon(Icons.calendar_month_rounded, size: 30),
                 color: Colors.white,
                 onPressed: () {
-                   Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CourseListPage()),
-                  );
                
                 },
               ),

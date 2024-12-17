@@ -1,5 +1,6 @@
 import 'package:brilnix/community/Search_group.dart';
 import 'package:brilnix/courses/course.dart';
+
 import 'package:brilnix/templates/chatbot.dart';
 
 import 'package:brilnix/widgets/header.dart';
@@ -297,8 +298,9 @@ class VideoFeedPageState extends State<VideoFeedPage> with WidgetsBindingObserve
                     context,
                     MaterialPageRoute(builder: (context) => CourseListPage()),
                   );
-                },
-              ),
+                }
+              )
+
             ],
           ),
         ),
