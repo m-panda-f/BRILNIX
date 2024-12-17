@@ -388,7 +388,7 @@ class GroupChatScreenState extends State<GroupChatScreen> {
               gradient: isCurrentUser
                   ? LinearGradient(
                       colors: [
-                        Colors.deepPurple[300]!,
+                        Colors.deepPurple[400]!,
                         Colors.deepPurple[400]!,
                       ],
                       begin: Alignment.topLeft,
@@ -396,7 +396,7 @@ class GroupChatScreenState extends State<GroupChatScreen> {
                     )
                   : LinearGradient(
                       colors: [
-                        Colors.grey[300]!,
+                        Colors.grey[400]!,
                         Colors.grey[400]!,
                       ],
                       begin: Alignment.topLeft,
@@ -462,7 +462,7 @@ class GroupChatScreenState extends State<GroupChatScreen> {
                       controller: _messageController,
                       decoration: InputDecoration(
                         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                        hintText: 'message...',
+                        hintText: 'Message...',
                         hintStyle: TextStyle(color: Colors.grey[500]),
                         border: InputBorder.none,
                       ),
