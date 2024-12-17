@@ -1,4 +1,5 @@
 import 'package:brilnix/community/Search_group.dart';
+import 'package:brilnix/courses/course.dart';
 import 'package:brilnix/templates/chatbot.dart';
 
 import 'package:brilnix/widgets/header.dart';
@@ -288,10 +289,14 @@ class VideoFeedPageState extends State<VideoFeedPage> with WidgetsBindingObserve
                 },
               ),
               IconButton(
-                icon: const Icon(Icons.calendar_month_rounded, size: 30),
+                icon: const Icon(Icons.menu_book_sharp, size: 30),
                 color: Colors.white,
                 onPressed: () {
                   _controller?.pause();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CourseListPage()),
+                  );
                 },
               ),
             ],
