@@ -1,6 +1,7 @@
 import 'package:brilnix/community/Search_group.dart';
 import 'package:brilnix/courses/course.dart';
 import 'package:brilnix/home.dart';
+import 'package:brilnix/templates/articles.dart';
 import 'package:brilnix/widgets/header.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -279,7 +280,10 @@ class ChatScreenState extends State<ChatScreen> {
                 icon: const Icon(Icons.article_outlined, size: 30),
                 color: Colors.white,
                 onPressed: () {
-               
+               Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ArticleSearchPage()),
+                );
                 },
               ),
               IconButton(

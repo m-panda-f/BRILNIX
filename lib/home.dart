@@ -1,5 +1,6 @@
 import 'package:brilnix/community/Search_group.dart';
 import 'package:brilnix/courses/course.dart';
+import 'package:brilnix/templates/articles.dart';
 
 import 'package:brilnix/templates/chatbot.dart';
 
@@ -287,6 +288,10 @@ class VideoFeedPageState extends State<VideoFeedPage> with WidgetsBindingObserve
                 color: Colors.white,
                 onPressed: () {
                   _controller?.pause();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ArticleSearchPage()),
+                  );
                 },
               ),
               IconButton(

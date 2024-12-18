@@ -1,6 +1,8 @@
 import 'package:brilnix/community/Search_group.dart';
 import 'package:brilnix/home.dart';
+import 'package:brilnix/templates/articles.dart';
 import 'package:brilnix/templates/chatbot.dart';
+import 'package:brilnix/widgets/header.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -49,7 +51,7 @@ class _CourseListPageState extends State<CourseListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Courses')),
+      appBar:const CustomAppBar(title: 'Courses', showUploadButton: false),
       body: FutureBuilder<QuerySnapshot>(
         future: FirebaseFirestore.instance.collection('Courses').get(),
         builder: (context, snapshot) {
@@ -238,6 +240,10 @@ itemBuilder: (context, index) {
                 icon: const Icon(Icons.article_outlined, size: 30),
                 color: Colors.white,
                 onPressed: () {
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ArticleSearchPage()),
+                );
                   
                 },
               ),

@@ -1,6 +1,8 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:brilnix/community/groupchat.dart';
 import 'package:brilnix/courses/course.dart';
 import 'package:brilnix/home.dart';
+import 'package:brilnix/templates/articles.dart';
 import 'package:brilnix/templates/chatbot.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -98,10 +100,43 @@ class _GroupListScreenState extends State<GroupListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Groups'),
+        automaticallyImplyLeading: false, // Remove the default back button
+      flexibleSpace: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFF7F00FF), Color(0xFFE100FF)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+      ),
+      title: Row(
+        children: [
+          FadeInLeft(
+            child: ShaderMask(
+              shaderCallback: (Rect bounds) {
+                return LinearGradient(
+                  colors: [Colors.cyanAccent, Colors.lightBlueAccent],
+                ).createShader(bounds);
+              },
+              child: Text(
+                "Groups",
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+            ),
+          ),
+         
+        ],
+      ),
+      elevation: 5,
         actions: [
           IconButton(
-            icon: const Icon(Icons.add),
+            icon: const Icon(Icons.group_add_rounded, size: 35,),
             onPressed: () {
               Navigator.push(
                 context,
@@ -258,7 +293,10 @@ class _GroupListScreenState extends State<GroupListScreen> {
                 icon: const Icon(Icons.article_outlined, size: 30),
                 color: Colors.white,
                 onPressed: () {
-                  
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ArticleSearchPage()),
+                );
                 },
               ),
               IconButton(
